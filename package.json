@@ -5,6 +5,7 @@
   "main": "app.js",
   "dependencies": {
     "chai": "^4.2.0",
+    "dotenv": "^7.0.0",
     "express": "^4.16.4",
     "gulp": "^4.0.1",
     "gulp-jshint": "^2.1.0",
@@ -12,7 +13,8 @@
     "jshint": "^2.10.2",
     "jshint-stylish": "^2.2.1",
     "mocha": "^6.1.4",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "sinon": "^7.3.2"
   },
   "scripts": {
     "start": "node app",

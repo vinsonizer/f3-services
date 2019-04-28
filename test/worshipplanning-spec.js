@@ -1,10 +1,23 @@
 /* global describe, it */
+require('dotenv').config({ debug: true })
 const assert = require('assert')
+const should = require('chai').should()
 
-describe('Array', function () {
-  describe('#indexOf()', function () {
-    it('should return -1 when the value is not present', function () {
-      assert.strictEqual([1, 2, 3].indexOf(4), -1)
+const wp = require('../lib/worshipplanning')
+
+describe('WP', function () {
+  it('should exist', function () {
+    should.exist(wp)
+  })
+
+  describe('login', function (done) {
+    it('should return a token', function () {
+      wp.login(function (err, token) {
+        if (err) assert.fail('No token')
+        else {
+          should.exist(token)
+        }
+      })
     })
   })
 })
