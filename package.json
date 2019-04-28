@@ -5,11 +5,15 @@
   "main": "app.js",
   "dependencies": {
     "express": "^4.16.4",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "chai": "^4.2.0",
+    "gulp-jshint": "^2.1.0",
+    "gulp-mocha": "^6.0.0",
+    "mocha": "^6.1.4"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app",
+    "postinstall": "gulp default"
   },
   "repository": {
     "type": "git",
