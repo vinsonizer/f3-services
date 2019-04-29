@@ -11,7 +11,7 @@ app.get('/heartbeat', (req, res) => res.send('Ok'))
 app.get('/events', (req, res) => wp.getEvents(function (err, events) {
   if (err) {
     console.log(err); res.send('Error')
-  } else res.send(events)
+  } else res.json(events)
 }))
 
 app.listen(PORT, () => console.log(`Example app listening on ${PORT}!`))
