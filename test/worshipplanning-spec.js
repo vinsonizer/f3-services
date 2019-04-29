@@ -1,5 +1,5 @@
 /* global describe, it */
-require('dotenv').config({ debug: true })
+require('dotenv').config()
 const assert = require('assert')
 const should = require('chai').should()
 
@@ -10,13 +10,11 @@ describe('WP', function () {
     should.exist(wp)
   })
 
-  describe('login', function (done) {
-    it('should return a token', function () {
-      wp.login(function (err, token) {
-        if (err) assert.fail('No token')
-        else {
-          should.exist(token)
-        }
+  describe('getEvents', function () {
+    it('should return events', function (done) {
+      wp.getEvents(function (err, data) {
+        if (err) assert.fail('No data')
+        else should.exist(data); done()
       })
     })
   })
