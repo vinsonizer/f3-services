@@ -6,9 +6,9 @@ const PORT = process.env.PORT || 5000
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
-app.get('/heartbeat', (req, res) => res.send('Ok'))
+app.get('/api/heartbeat', (req, res) => res.send('Ok'))
 
-app.get('/events', (req, res) => wp.getEvents(function (err, events) {
+app.get('/api/events', (req, res) => wp.getEvents(function (err, events) {
   if (err) {
     console.log(err); res.send('Error')
   } else res.json(events)
