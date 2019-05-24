@@ -1,6 +1,10 @@
 const express = require('express')
 const app = express()
 const wp = require('./lib/worshipplanning')
+const slack = require('./lib/slack')
+
+app.use(express.json())
+app.use(express.urlencoded())
 
 const PORT = process.env.PORT || 5000
 
@@ -10,7 +14,7 @@ app.get('/api/heartbeat', (req, res) => res.send('Ok'))
 
 app.get('/api/events', (req, res) => wp.getEvents(function (err, events) {
   if (err) {
-    console.log(err); res.send('Error')
+    console.log(err); res.send('Error: ' + err)
   } else res.json(events)
 }))
 
